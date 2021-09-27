@@ -7,7 +7,6 @@ using Photon.Realtime;
 //포톤을 이용하여 게임서버까지 들어가게 하고 싶다.
 public class NatworkManager : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.GameVersion = "0.1";
@@ -27,6 +26,7 @@ public class NatworkManager : MonoBehaviourPunCallbacks
         print("로비 접속");
         string roomName = "DefaultRoom";
         RoomOptions ro = new RoomOptions() {MaxPlayers = 5, IsVisible = true, IsOpen =true};
+
         //게임서버로 접속
         PhotonNetwork.JoinOrCreateRoom(roomName, ro, TypedLobby.Default);
     }

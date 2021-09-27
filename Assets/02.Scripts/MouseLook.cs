@@ -20,7 +20,8 @@ public class MouseLook : MonoBehaviourPun
         {
             return;
         }
-        float mouseX = Input.GetAxis("Mouse X") * mouseSceneitivity * Time.deltaTime;
+            Debug.Log("마우스 클릭");
+            float mouseX = Input.GetAxis("Mouse X") * mouseSceneitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSceneitivity * Time.deltaTime;
 
             xRotation -= mouseY;
@@ -28,6 +29,9 @@ public class MouseLook : MonoBehaviourPun
 
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
+        
+
+           
         
         
     }

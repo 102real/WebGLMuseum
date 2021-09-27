@@ -29,12 +29,14 @@ public class PlayerMovement : MonoBehaviourPun
             cam.tag = "MainCamera";
             gameObject.layer = LayerMask.NameToLayer("Player");
             gameObject.name = "Player";
+            AudioListener.volume = 1;
         }
         else
         {
             gameObject.layer = LayerMask.NameToLayer("Enemy");
             cam = GetComponentInChildren<Camera>();
             cam.enabled = false;
+            GetComponentInChildren<AudioListener>().enabled = false;
             gameObject.name = "Enemy";
 
         }
